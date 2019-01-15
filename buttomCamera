@@ -1,0 +1,11 @@
+from picamera import PiCamera
+from gpiozero import Button
+from time import sleep
+
+camera = PiCamera()
+button = Button(18)
+
+
+button.wait_for_press()
+sleep(2)
+camera.capture('/home/pi/Desktop/image.jpg')
